@@ -1,7 +1,12 @@
+'use client'
 import Image from "next/image"
 import Button from "./Button"
+import { useRouter } from "next/navigation"
 
 const Guide = () => {
+
+  const router = useRouter()
+
   return (
     <section className="flexCenter flex-col">
       <div className="padding-container max-container w-full pt-12 pb-24">
@@ -13,11 +18,12 @@ const Guide = () => {
           </p>
 
           <div className="m-auto">
-            <Button
-              type="button"
-              title="על החברה"
-              variant="btn_red"
-            />
+            <button type='button'
+              onClick={() => router.push('/about')}
+              className={`flexCenter gap-3 rounded-full border btn_red hover:!bg-white hover:!text-[#ca2828]
+                transition-all duration-300`}>
+              <label className='bold-16 whitespace-nowrap cursor-pointer'>על החברה</label>
+            </button>
           </div>
 
         </div>

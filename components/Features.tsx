@@ -4,14 +4,16 @@ import Image from "next/image"
 import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 const Features = () => {
+
 
   return (
     <section className="bg-[#bdbdbdbb] py-5">
       <div className="container my-24 mx-auto md:px-6">
         <section className="max-container mb-32 text-center">
-          <h2 className="mb-20 text-3xl font-bold">סוגי מרכבים</h2>
+          <h2 className="mb-20 text-4xl font-bold">סוגי מרכבים</h2>
 
           <div className="grid lg:grid-cols-2 lg:gap-x-12">
             {FEATURES.map((feature, idx) => (
@@ -40,6 +42,7 @@ type FeatureItemProps = {
 
 const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
 
+  const router = useRouter()
   const controls = useAnimation();
   const [ref, inView] = useInView();
 
@@ -72,11 +75,22 @@ const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
           </div>
         </div>
         <div className="p-6 px-20">
-          <h5 className="mb-4 text-lg font-semibold">{title}</h5>
+          <h5 className="mb-4 text-xl font-semibold text-[#ca2828]">{title}</h5>
           <p>
             {description}
           </p>
         </div>
+        <div className="flex justify-center py-3">
+          <button type='button'
+            onClick={() => router.push('/gallery')}
+            className={`flexCenter gap-3 rounded-full border btn_red hover:!bg-white hover:!text-[#ca2828]
+                transition-all duration-300`}>
+            <label className='bold-16 whitespace-nowrap cursor-pointer'>לעוד {title}</label>
+          </button>
+        </div>
+
+      </div>
+      <div>
       </div>
     </motion.div>
   )
