@@ -47,7 +47,7 @@ const page = (props: Props) => {
 
   return (
     <section>
-      <div className='bg-[#bdbdbdbb] w-full sticky top-0 h-[100px] z-50'>
+      <div className='bg-[#bdbdbdbb] w-full'>
         <div className='mx-auto py-10 justify-between grid grid-cols-2 gap-5 md:flex w-1/2 text-center md:text-right'>
           {
             imageTypes.map(type => (
