@@ -8,7 +8,7 @@ type Props = {
 const ImagePreview = ({url}: Props) => {
     return (
         <img
-            className="max-w-full h-full object-cover rounded-lg"
+            className="w-full h-full object-cover rounded-lg object-center"
             src={url}
             alt={`Image`}
         />
