@@ -7,7 +7,7 @@ const Footer = () => {
   const wazeUrl = `https://www.waze.com/ul?q=${encodeURIComponent('יפרח ייצור מרכבים')}`;
 
   return (
-    <footer className='w-full bg-[#bdbdbdbb]'>
+    <footer className='w-full bg-[#bdbdbdbb]' id='footer'>
       <div className="max-container mx-auto w-full relative text-center text-black">
         <div className="dark:bg-gray-900">
           <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">

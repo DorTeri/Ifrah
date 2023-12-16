@@ -38,12 +38,11 @@ const Navbar = () => {
 
             <div className="flex gap-3">
                 <div className="cursor-pointer mr-2">
-                    <button type='button'
-                        onClick={() => router.push('/contact')}
+                    <Link href={'#footer'}
                         className={`flexCenter gap-3 rounded-full border btn_red hover:border-5 hover:border-[#000]
                 transition-all duration-300`}>
                         <label className='bold-16 whitespace-nowrap cursor-pointer'>צור קשר</label>
-                    </button>
+                    </Link>
                 </div>
 
                 <button onClick={handleClick}
