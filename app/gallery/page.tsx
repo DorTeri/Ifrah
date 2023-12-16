@@ -45,6 +45,8 @@ const page = (props: Props) => {
     }, 1000);
   }
 
+  const test = 0
+
   return (
     <section>
       <div className='bg-[#bdbdbdbb] w-full sticky top-0 h-[100px] z-50'>
