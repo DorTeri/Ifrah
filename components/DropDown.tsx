@@ -9,7 +9,7 @@ type Props = {
     handleClick: () => void
 }
 
-const DropDown = ({ pathName , handleClick }: Props) => {
+const DropDown = ({ pathName, handleClick }: Props) => {
 
 
     const navContainer = {
@@ -77,7 +77,8 @@ const DropDown = ({ pathName , handleClick }: Props) => {
                             key={link.key}
                             variants={navItem} >
                             <Link onClick={handleClick}
-                            href={link.href} key={link.key} className={`regular-18 text-gray-50
+                                href={link.href} key={link.key} className={`regular-18 text-gray-50
+                            hover:!text-[#ca2828]
                  flexCenter cursor-pointer pb-4 transition-all !font-bold ${link.href === pathName && '!text-[#ca2828]'}`}>
                                 {link.label}
                             </Link>

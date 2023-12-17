@@ -15,12 +15,12 @@ const Hero = () => {
      gap-20 py-10 pb-32 md:gap-28 lg:py-20 text-right">
 
         <div className="relative z-20 flex flex-1 flex-col xl:w-1/2 ml-auto pt-10">
-          <h1 className="!text-[40px] md:!text-[61px] bold-52 lg:bold-88 text-white">אנחנו עושים הכל כדי שלא תשים לב אלינו</h1>
+          <h1 className="!text-[40px] md:!text-[61px] bold-52 lg:bold-88 text-white">המרכב שעושה את ההבדל</h1>
         </div>
 
         <div className="flex w-full gap-3 z-20 justify-center md:justify-end">
           <button type='button'
-            onClick={() => router.push('/gallery')}
+            onClick={() => router.push('/about')}
             className={`flexCenter gap-3 rounded-full border btn_red hover:!bg-white hover:!text-[#ca2828]
                 transition-all duration-300`}>
             <label className='bold-16 whitespace-nowrap cursor-pointer'>קצת עלינו</label>

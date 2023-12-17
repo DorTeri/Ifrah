@@ -3,14 +3,16 @@ import ImagePreview from '@/components/ImagePreview'
 import Info from '@/components/Info';
 import React, { useState } from 'react'
 import Loader from "react-js-loader";
+import { useParams } from 'next/navigation'
+
 
 
 type Props = {}
 
 const page = (props: Props) => {
+  const { typeName } = useParams()
 
-
-  const [imageType, setImageType] = useState('curteins')
+  const [imageType, setImageType] = useState(typeName ||'curteins')
   const [isLoading, setIsLoading] = useState(false)
 
   const getImagePath = (imageName: string) => {
@@ -51,7 +53,7 @@ const page = (props: Props) => {
         <div className='mx-auto py-10 justify-between grid grid-cols-2 gap-5 md:flex w-1/2 text-center md:text-right'>
           {
             imageTypes.map(type => (
-              <div className='relative'>
+              <div key={type.value} className='relative'>
                 <p
                   className={`inline-block text-black cursor-pointer ${imageType === type.value ? 'border-b-2 border-red-500' : ''
                     } hover:border-b-2 hover:border-red-500`}
@@ -64,7 +66,7 @@ const page = (props: Props) => {
           }
         </div>
       </div>
-      
+
       <div className="container mt-10 mb-10 mx-auto md:px-6 lg:pt-12">
         <div className="max-container flex flex-wrap">
           {/* <div className='mx-auto mb-10 w-full text-center'>
