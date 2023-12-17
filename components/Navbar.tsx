@@ -4,17 +4,14 @@ import Image from "next/image"
 import Link from "next/link"
 import Button from "./Button"
 import logo from "../public/assets/ifrah_logo.svg"
-import { IoMdClose } from "react-icons/io";
 import { useState } from "react"
 import DropDown from "./DropDown"
 import { usePathname } from "next/navigation"
-import { useRouter } from 'next/navigation';
 
 
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false)
-    const router = useRouter();
 
     const pathName = usePathname()
 

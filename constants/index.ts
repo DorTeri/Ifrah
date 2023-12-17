@@ -2,8 +2,8 @@
 export const NAV_LINKS = [
   { href: '/', key: 'home', label: 'דף הבית' },
   { href: '/about', key: 'about', label: 'עלינו' },
-  { href: '#features', key: 'features', label: 'מרכבים' },
-  { href: '/gallery', key: 'gallery ', label: 'גלרייה' },
+  // { href: '#features', key: 'features', label: 'מרכבים' },
+  { href: '/gallery/curteins', key: 'gallery', label: 'גלרייה' },
   // { href: '/', key: 'contact', label: 'צור קשר' },
 ];
 
