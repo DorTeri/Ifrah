@@ -68,10 +68,10 @@ const Footer = () => {
                   <h2 className="mb-6 text-lg font-semibold text-gray-900 uppercase dark:text-white">פרטי התקשרות</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                     <li className="mb-4">
-                      <a href="https://flowbite.com/" className="hover:underline">08-9295222</a>
+                      <p>08-9295222</p>
                     </li>
                     <li>
-                      <a href="https://tailwindcss.com/" className="hover:underline">office@ifrah-merkavim.co.il</a>
+                      <p>office@ifrah-merkavim.co.il</p>
                     </li>
                   </ul>
                 </div>
@@ -79,10 +79,10 @@ const Footer = () => {
                   <h2 className="mb-6 text-lg font-semibold text-gray-900 uppercase dark:text-white">שעות פעילות</h2>
                   <ul className="text-gray-500 dark:text-gray-400 font-medium">
                     <li className="mb-4">
-                      <a href="https://github.com/themesberg/flowbite" className="hover:underline ">ראשון - חמישי</a>
+                      <p>ראשון - חמישי</p>
                     </li>
                     <li>
-                      <a href="https://discord.gg/4eeurUVvTy" className="hover:underline">07:30 - 16:30</a>
+                      <p>07:30 - 16:30</p>
                     </li>
                   </ul>
                 </div>
