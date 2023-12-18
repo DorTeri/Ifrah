@@ -29,7 +29,7 @@ const Hero = () => {
             onClick={() => router.push('/gallery/curteins')}
             className={`flexCenter gap-3 rounded-full border btn_white_text !bg-transparent
                !text-white hover:!bg-white hover:!text-black transition-all duration-300`}>
-            <label className='bold-16 whitespace-nowrap cursor-pointer'>עבודות</label>
+            <label className='bold-16 whitespace-nowrap cursor-pointer'>סוגי מרכב</label>
           </button>
         </div>
       </section>

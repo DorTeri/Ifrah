@@ -13,7 +13,7 @@ const Features = () => {
     <section className="bg-[#bdbdbdbb] py-5" id="features">
       <div className="container my-24 mx-auto md:px-6">
         <section className="max-container mb-32 text-center">
-          <h2 className="mb-20 text-4xl font-bold">סוגי מרכבים</h2>
+          <h2 className="mb-20 text-4xl font-bold">סוגי מרכב</h2>
 
           <div className="grid lg:grid-cols-2 lg:gap-x-12">
             {FEATURES.map((feature, idx) => (
