@@ -12,7 +12,7 @@ type Props = {}
 const page = (props: Props) => {
   const { typeName } = useParams()
 
-  const [imageType, setImageType] = useState(typeName ||'curteins')
+  const [imageType, setImageType] = useState(typeName || 'curteins')
   const [isLoading, setIsLoading] = useState(false)
 
   const getImagePath = (imageName: string) => {
@@ -50,7 +50,7 @@ const page = (props: Props) => {
   return (
     <section>
       <div className='bg-[#bdbdbdbb] w-full'>
-        <div className='mx-auto py-10 justify-between grid grid-cols-2 gap-5 md:flex w-1/2 text-center md:text-right'>
+        <div className='mx-auto py-10 justify-between grid grid-cols-2 gap-5 md:flex md:w-2/3 lg:w-1/2 text-center md:text-right'>
           {
             imageTypes.map(type => (
               <div key={type.value} className='relative'>
@@ -69,9 +69,6 @@ const page = (props: Props) => {
 
       <div className="container mt-10 mb-10 mx-auto md:px-6 lg:pt-12">
         <div className="max-container flex flex-wrap">
-          {/* <div className='mx-auto mb-10 w-full text-center'>
-          <h2 className='!text-[28px] md:!text-[45px] bold-52 lg:bold-88 text-black'>כאן תוכלו להתרשם מהעבודות שלנו</h2>
-        </div> */}
           {
 
             <Info type={imageType} />
