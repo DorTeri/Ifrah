@@ -21,7 +21,7 @@ const page = (props: Props) => {
 
   const imageTypes = [
     {
-      title: 'מרכב שירות',
+      title: 'מרכב לניידת שירות',
       value: 'service',
     },
     {

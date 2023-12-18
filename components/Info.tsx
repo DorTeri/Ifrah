@@ -29,7 +29,7 @@ const Info = ({ type }: Props) => {
 
             case 'service':
                 setIdx(3)
-                setTitle('מרכב שירות')
+                setTitle('מרכב לניידת שירות')
                 break;
             default:
                 break;
