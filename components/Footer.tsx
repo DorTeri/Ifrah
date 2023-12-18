@@ -1,4 +1,5 @@
 'use client'
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { FaWaze } from "react-icons/fa";
 
@@ -7,8 +8,24 @@ const Footer = () => {
 
   const wazeUrl = `https://www.waze.com/ul?q=${encodeURIComponent('יפרח ייצור מרכבים')}`;
 
+  const [formData, setFormData] = useState({
+    phone: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [isLoading, setIsLoading] = useState(false)
+
+  const handleChange = (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsLoading(true)
 
     const formData = new FormData(e.currentTarget);
     const formObject: { [key: string]: string } = {}; // Type annotation added
@@ -19,8 +36,6 @@ const Footer = () => {
 
     // Advanced form validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    console.log(formObject.email)
 
     if (!formObject.email || !emailRegex.test(formObject.email.trim())) {
       console.error('Invalid email address');
@@ -45,12 +60,18 @@ const Footer = () => {
 
       if (response.ok) {
         toast.success("האימייל נשלח, תודה שייצרת קשר");
-      } else {
-        toast.error("שליחת אימייל נכשלה, צור איתנו קשר");
+        setFormData({
+          phone: '',
+          email: '',
+          subject: '',
+          message: '',
+        });
       }
+      setIsLoading(false)
     } catch (error) {
       console.error('Error:', error);
-      // Add error handling here
+      setIsLoading(false)
+      toast.error("שליחת אימייל נכשלה, צור איתנו קשר");
     }
   };
 
@@ -110,27 +131,27 @@ const Footer = () => {
         </div>
         <section className="dark:bg-gray-900">
           <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
-            <h2 className="mb-6 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">צור קשר</h2>
+            <h2 className="mb-6 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">דברו איתנו</h2>
             <form className="space-y-8 text-right" onSubmit={(e) => handleSubmit(e)}>
               <div className='flex gap-5'>
                 <div className='w-1/2'>
                   <label className="block mb-2 text-sm font-bold dark:text-gray-300 text-[#ca2828]">מספר טלפון</label>
-                  <input type="phone" id="phone" name='phone' className="shadow-sm bg-white border border-[#ca2828] text-black text-sm rounded-lg placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light text-right" placeholder="050-424-4242" required />
+                  <input type="phone" id="phone" name='phone' value={formData.phone} onChange={(e) => handleChange(e)} className="shadow-sm bg-white border border-[#ca2828] text-black text-sm rounded-lg placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light text-right" placeholder="050-424-4242" required />
                 </div>
                 <div className='w-1/2'>
                   <label className="block mb-2 text-sm font-bold dark:text-gray-300 text-[#ca2828]">אימייל</label>
-                  <input type="email" id="email" name='email' className="shadow-sm bg-white border border-[#ca2828] text-black text-sm rounded-lg placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light text-right" placeholder="office@ifrah-merkavim.co.il" required />
+                  <input type="email" id="email" value={formData.email} onChange={(e) => handleChange(e)} name='email' className="shadow-sm bg-white border border-[#ca2828] text-black text-sm rounded-lg placeholder-gray-400 focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light text-right" placeholder="office@ifrah-merkavim.co.il" required />
                 </div>
               </div>
               <div>
                 <label className="block mb-2 text-sm font-bold text-[#ca2828] dark:text-gray-300">נושא</label>
-                <input type="text" id="subject" name='subject' className="block p-3 w-full text-sm text-black bg-white rounded-lg border placeholder-gray-400 border-[#ca2828] shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light text-right" placeholder="איך אנחנו יכולים לעזור לך" required />
+                <input type="text" id="subject" value={formData.subject} name='subject' onChange={(e) => handleChange(e)} className="block p-3 w-full text-sm text-black bg-white rounded-lg border placeholder-gray-400 border-[#ca2828] shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light text-right" placeholder="איך אנחנו יכולים לעזור לך" required />
               </div>
               <div className="sm:col-span-2">
                 <label className="block mb-2 text-sm font-bold text-[#ca2828] dark:text-gray-400">ההודעה שלך</label>
-                <textarea id="message" name='message' rows={6} className="block p-2.5 w-full text-sm text-black bg-white rounded-lg shadow-sm border border-[#ca2828] focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 text-right" placeholder="כתוב פה את ההודעה שלך"></textarea>
+                <textarea id="message" name='message' value={formData.message} onChange={(e) => handleChange(e)} rows={6} className="block p-2.5 w-full text-sm text-black bg-white rounded-lg shadow-sm border border-[#ca2828] focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 placeholder-gray-400 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 text-right" placeholder="כתוב פה את ההודעה שלך"></textarea>
               </div>
-              <button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4
+              <button disabled={isLoading} type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 sm:w-fit hover:bg-primary-800 focus:ring-4
                focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800 bg-[#ca2828] hover:bg-white
                 hover:text-black transition-all duration-300">שלח הודעה</button>
             </form>
