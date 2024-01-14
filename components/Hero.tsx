@@ -9,7 +9,7 @@ const Hero = () => {
   const router = useRouter();
 
   return (
-    <div className="relative w-full bg-hero-img bg-cover bg-center h-[65vh] lg:h-[80vh]">
+    <div className="relative w-full bg-hero-img bg-cover bg-center h-[65vh] min-h-[400px] lg:h-[80vh]">
       <div className="absolute top-0 left-0 w-full h-full z-5 bg-black opacity-60" />
       <section className="max-container padding-container flex flex-col
      gap-20 py-10 pb-32 md:gap-28 lg:py-20 text-right">

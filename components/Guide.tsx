@@ -14,7 +14,7 @@ const Guide = () => {
         <div className="flex flex-col justify-between gap-5 lg:gap-10 text-center">
           <h2 className="!text-[30px] md:!text-[45px] bold-40 lg:bold-64 m-auto text-center">מומחים בבניית ארגזים ומרכבים</h2>
           <p className="!text-[20px] md:!text-[30px] regular-20 lg:regular-24 text-gray-30 m-auto text-center">
-            בין לקוחותינו נמנות חברות ליסינג המובילות בשוק הישראלי. דבר שלא מונע מאיתנו לשים דגש על שירות לקוחות ואיכות המוצר
+          אנו מספקים לך את השקט הנפשי הדרוש לך כדי לנהל מערך שיווק והפצה היעיל, הרווחי  והאיכותי ביותר ובראש שקט
           </p>
 
           <div className="m-auto">

@@ -55,7 +55,6 @@ const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
   }, [controls, inView]);
 
   const updateTypeName = () => {
-    console.log(title)
     switch (title) {
       case "מרכב וילונות":
         setTypeName('curteins')
@@ -84,9 +83,9 @@ const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
         visible: { opacity: 1, scale: 1 },
         hidden: { opacity: 0, scale: 0 }
       }}
-      className="mb-12 lg:mb-10">
+      className={`mb-12 lg:mb-10`}>
       <div
-        className="block h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
+        className={`block relative h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700`}>
         <div className="flex justify-center">
           <div className="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-primary shadow-md">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"

@@ -36,7 +36,11 @@ module.exports = {
         pattern: "url('/pattern.png')",
         'pattern-2': "url('/pattern-bg.png')",
         'hero-img': "url('https://images.unsplash.com/photo-1592838064575-70ed626d3a0e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHRydWNrfGVufDB8MHwwfHx8MA%3D%3D')",
-        'reasons-bg': "url('https://images.unsplash.com/photo-1541140134513-85a161dc4a00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JheSUyMGJhY2tncm91bmR8ZW58MHwwfDB8fHww')"
+        'reasons-bg': "url('https://images.unsplash.com/photo-1541140134513-85a161dc4a00?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z3JheSUyMGJhY2tncm91bmR8ZW58MHwwfDB8fHww')",
+        'open': "url('/assets/features/features_open.jpg')",
+        'dry': "url('/assets/features/features_dry.jpg')",
+        'service': "url('/assets/features/features_service.jpg')",
+        'curteins-img': "url('/assets/features/features_curteins.jpg')"
       },
       screens: {
         xs: '400px',

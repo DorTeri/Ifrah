@@ -12,12 +12,12 @@ const HomeGallery = (props: Props) => {
     const router = useRouter()
 
     const images = [
-        "/assets/curteins/image_1.jpg",
-        "/assets/curteins/image_32.jpg",
+        "/assets/curteins/image_4.jpg",
+        "/assets/curteins/image_6.jpg",
         "/assets/dry/image_5.jpg",
-        "/assets/dry/image_12.jpg",
-        "/assets/open/image_5.jpg",
-        "/assets/open/image_11.jpg",
+        "/assets/dry/image_6.jpg",
+        "/assets/open/image_4.jpg",
+        "/assets/open/image_6.jpg",
     ]
 
 
