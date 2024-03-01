@@ -5,30 +5,104 @@ import { useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import curteinsImage from '../public/assets/features/curteins_png.png'
+import dryImage from '../public/assets/features/dry_png.png'
+import openImage from '../public/assets/features/open_png.png'
+import serviceImage from '../public/assets/features/service_png.png'
+import FeaturesCarousel from "./FeaturesCarousel";
+import Slider from "react-slick";
 
-const Features = () => {
+type Props = {
+  handleOrderPopup: () => void;
+}
 
+const Features = ({ handleOrderPopup }: Props) => {
+
+  const images = [
+    {
+      id: 1,
+      img: curteinsImage,
+      title: 'מרכב וילונות',
+      description: 'לכתוב פה משהו לגבי כל סוג מרכב',
+    },
+    {
+      id: 2,
+      img: dryImage,
+      title: 'מרכב יבש',
+      description: 'לכתוב פה משהו לגבי כל סוג מרכב',
+    },
+    {
+      id: 3,
+      img: openImage,
+      title: 'מרכב פתוח',
+      description: 'לכתוב פה משהו לגבי כל סוג מרכב',
+    },
+    {
+      id: 4,
+      img: serviceImage,
+      title: 'מרכב  ניידת שירות',
+      description: 'לכתוב פה משהו לגבי כל סוג מרכב',
+    },
+  ]
+
+  var settings = {
+    dots: false,
+    arrows: false,
+    infinite: true,
+    speed: 800,
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 4000,
+    cssEase: "ease-in-out",
+    pauseOnHover: false,
+    pauseOnFocus: true,
+  };
 
   return (
-    <section className="bg-[#bdbdbdbb] py-5" id="features">
-      <div className="container my-24 mx-auto md:px-6">
-        <section className="max-container mb-32 text-center">
-          <h2 className="mb-20 text-4xl font-bold">סוגי מרכב</h2>
-
-          <div className="grid lg:grid-cols-2 lg:gap-x-12">
-            {FEATURES.map((feature, idx) => (
-              <FeatureItem
-                idx={idx}
-                title={feature.title}
-                key={idx}
-                icon={feature.icon}
-                description={feature.description}
-              />
-            ))}
-          </div>
-        </section>
+    <div className="relative overflow-hidden min-h-[550px] sm:min-h-[650px] bg-gray-100 flex justify-center items-center duration-200 ">
+      {/* background pattern */}
+      <div className="lg:h-[700px] lg:w-[700px] md:h-[600px] md:w-[600px] h-[400px] w-[400px] bg-[#ca2828] absolute -top-1/2 right-0 rounded-3xl rotate-45 -z[8]"></div>
+      {/* hero section */}
+      <div className="container pb-8 sm:pb-0">
+        <Slider {...settings}>
+          {images.map((data) => (
+            <div key={data.id}>
+              <div className="grid grid-cols-1 sm:grid-cols-2">
+                {/* image section */}
+                <div className="order-2 sm:order-2">
+                  <div
+                    data-aos="zoom-in"
+                    data-aos-once="true"
+                    className="relative z-10"
+                  >
+                    <Image
+                      src={data.img}
+                      alt=""
+                      width={300}
+                      height={300}
+                      className="w-[300px] h-[300px] sm:h-[450px] sm:w-[600px] object-contain mx-auto pr-5"
+                    />
+                  </div>
+                </div>
+                {/* text content section */}
+                <div className="flex flex-col items-center justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10">
+                  <h1
+                    className="text-5xl sm:text-6xl lg:text-7xl font-bold"
+                  >
+                    {data.title}
+                  </h1>
+                  <p
+                    className="text-sm"
+                  >
+                    {data.description}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
       </div>
-    </section>
+    </div>
   )
 }
 
@@ -37,10 +111,11 @@ type FeatureItemProps = {
   icon: string;
   description: string
   idx: number
+  image: any
 }
 
 
-const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
+const FeatureItem = ({ title, icon, description, image }: FeatureItemProps) => {
 
   const router = useRouter()
   const controls = useAnimation();
@@ -83,37 +158,29 @@ const FeatureItem = ({ title, icon, description }: FeatureItemProps) => {
         visible: { opacity: 1, scale: 1 },
         hidden: { opacity: 0, scale: 0 }
       }}
-      className={`mb-12 lg:mb-10`}>
-      <div
-        className={`block relative h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700`}>
-        <div className="flex justify-center">
-          <div className="-mt-8 inline-block rounded-full bg-primary-100 p-4 text-primary shadow-md">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-              stroke="currentColor" className="h-7 w-7">
-              <path strokeLinecap="round" strokeLinejoin="round"
-                d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
-            </svg>
-          </div>
+      className={`mb-12 lg:mb-10 relative`}>
+      <div className={`block relative h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700`}>
+        <div className="absolute w-full h-full opacity-30">
+          <Image
+            src={image}
+            alt="Description of your image"
+            className="w-full h-full object-cover rounded-lg"
+          />
         </div>
         <div className="p-6 px-20">
           <h5 className="mb-4 text-xl font-semibold text-[#ca2828]">{title}</h5>
-          <p>
-            {description}
-          </p>
+          <p>{description}</p>
         </div>
         <div className="flex justify-center py-3">
           <button type='button'
             onClick={() => router.push(`/gallery/${typeName}`)}
-            className={`flexCenter gap-3 rounded-full border btn_red hover:!bg-white hover:!text-[#ca2828]
-                transition-all duration-300`}>
+            className={`flexCenter gap-3 rounded-full border btn_red hover:!bg-white hover:!text-[#ca2828] transition-all duration-300`}>
             <label className='bold-16 whitespace-nowrap cursor-pointer'>לעוד {title}</label>
           </button>
         </div>
-
-      </div>
-      <div>
       </div>
     </motion.div>
+
   )
 }
 

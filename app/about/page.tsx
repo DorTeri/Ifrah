@@ -48,7 +48,7 @@ const page = (props: Props) => {
             <div className="w-full px-6 mb-10 lg:mb-0 text-right">
                 <div className="justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6 text-right">
                     <h2
-                        className="py-3 pr-2 mb-4 border-r-4 border-blue-500 dark:border-blue-400 text-3xl font-black text-gray-700 md:text-5xl dark:text-gray-300">
+                        className="py-3 pr-2 mb-4 border-r-4 border-blue-500 dark:border-blue-400 text-3xl font-black text-gray-700 md:text-5xl dark:text-gray-500">
                         דרישות המפרט הטכני שלנו
                     </h2>
                     <p className="mb-4 text-right leading-7 text-gray-500 dark:text-gray-400">
@@ -63,7 +63,7 @@ const page = (props: Props) => {
                                         d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01-.622-.636zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708z" />
                                 </svg>
                             </span>
-                            עמידות איטום צלאה מפני חדירת מים
+                            עמידות איטום מלאה מפני חדירת מים
                         </li>
                         <li className="flex flex-row-reverse items-center mb-4 text-right text-gray-600 dark:text-gray-400">
                             <span className="ml-3 text-blue-500 dark:text-blue-400">
@@ -102,7 +102,7 @@ const page = (props: Props) => {
                     <div className="pr-4 mb-6 border-r-4 border-red-500 ">
                         <span>&#63;</span>
                         <span className="text-sm text-gray-600 uppercase dark:text-gray-400">נהג משאית</span>
-                        <h1 className="mt-2 text-3xl font-black text-gray-700 md:text-5xl dark:text-gray-300">
+                        <h1 className="mt-2 text-3xl font-black text-gray-700 md:text-5xl dark:text-gray-500">
                             ראש שקט
                         </h1>
                     </div>

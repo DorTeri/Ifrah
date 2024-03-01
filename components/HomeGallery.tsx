@@ -28,7 +28,7 @@ const HomeGallery = (props: Props) => {
                     <GalleryImage key={index} image={image} />
                 ))}
             </div>
-            <div className='flex items-center justify-center p-10' onClick={() => router.push('/gallery')}>
+            <div className='flex items-center justify-center p-10' onClick={() => router.push('/gallery/curteins')}>
                 <Button
                     type='submit'
                     title='לעוד תמונות'

@@ -77,7 +77,7 @@ const Footer = () => {
 
 
   return (
-    <footer className='w-full bg-[#bdbdbdbb]' id='footer'>
+    <footer className='w-full dark:bg-gray-900 bg-[#bdbdbdbb]' id='footer'>
       <div className="max-container mx-auto w-full relative text-center text-black">
         <div className="dark:bg-gray-900">
           <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
