@@ -1,15 +1,9 @@
 'use client'
-import { FEATURES } from "@/constants"
 import Image from "next/image"
-import { useInView } from "react-intersection-observer";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import curteinsImage from '../public/assets/features/curteins_png.png'
 import dryImage from '../public/assets/features/dry_png.png'
 import openImage from '../public/assets/features/open_png.png'
 import serviceImage from '../public/assets/features/service_png.png'
-import FeaturesCarousel from "./FeaturesCarousel";
 import Slider from "react-slick";
 
 type Props = {
@@ -105,85 +99,6 @@ const Features = ({ handleOrderPopup }: Props) => {
     </div>
   )
 }
-
-type FeatureItemProps = {
-  title: string;
-  icon: string;
-  description: string
-  idx: number
-  image: any
-}
-
-
-const FeatureItem = ({ title, icon, description, image }: FeatureItemProps) => {
-
-  const router = useRouter()
-  const controls = useAnimation();
-  const [ref, inView] = useInView();
-  const [typeName, setTypeName] = useState<string>('')
-
-  useEffect(() => {
-    updateTypeName()
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
-  const updateTypeName = () => {
-    switch (title) {
-      case "מרכב וילונות":
-        setTypeName('curteins')
-        break;
-      case "מרכב פתוח":
-        setTypeName('open')
-        break;
-      case "מרכב יבש":
-        setTypeName('dry')
-        break;
-      case "מרכב לניידת שירות":
-        setTypeName('service')
-        break;
-      default:
-        break;
-    }
-  }
-
-  return (
-    <motion.div
-      ref={ref}
-      animate={controls}
-      initial="hidden"
-      transition={{ duration: 0.5 }}
-      variants={{
-        visible: { opacity: 1, scale: 1 },
-        hidden: { opacity: 0, scale: 0 }
-      }}
-      className={`mb-12 lg:mb-10 relative`}>
-      <div className={`block relative h-full rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700`}>
-        <div className="absolute w-full h-full opacity-30">
-          <Image
-            src={image}
-            alt="Description of your image"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
-        <div className="p-6 px-20">
-          <h5 className="mb-4 text-xl font-semibold text-[#ca2828]">{title}</h5>
-          <p>{description}</p>
-        </div>
-        <div className="flex justify-center py-3">
-          <button type='button'
-            onClick={() => router.push(`/gallery/${typeName}`)}
-            className={`flexCenter gap-3 rounded-full border btn_red hover:!bg-white hover:!text-[#ca2828] transition-all duration-300`}>
-            <label className='bold-16 whitespace-nowrap cursor-pointer'>לעוד {title}</label>
-          </button>
-        </div>
-      </div>
-    </motion.div>
-
-  )
-}
-
 
 
 export default Features
