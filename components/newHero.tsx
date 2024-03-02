@@ -57,9 +57,9 @@ const NewHero = (props: Props) => {
                             יפרח <br /><span className="text-[#ca2828]">המרכב שעושה את ההבדל</span>
                         </h1>
                         <a className="mb-2 inline-block rounded bg-[#ca2828] px-12 pt-4 pb-3.5 text-sm font-bold uppercase leading-normal text-white hover:scale-105 shadow-[0_4px_9px_-4px_#ffffff] transition duration-150 ease-in-out mr-2 md:mr-2 md:mb-0"
-                            href="#!" role="button">קצת עלינו</a>
+                            href="/about" role="button">קצת עלינו</a>
                         <a className="inline-block rounded px-12 pt-4 pb-3.5 text-[#ca2828] bg-white text-sm font-bold uppercase leading-normal text-primary hover:scale-105 transition duration-150 ease-in-out hover:bg-neutral-500 hover:bg-opacity-10 hover:text-primary-600 focus:text-primary-600 focus:outline-none focus:ring-0 active:text-primary-700 shadow-[0_4px_9px_-4px_#ca2828]"
-                            href="#!" role="button">סוגי מרכב</a>
+                            href="/gallery/curteins" role="button">סוגי מרכב</a>
                     </div>
 
                 </div>
