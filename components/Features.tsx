@@ -5,6 +5,7 @@ import dryImage from '../public/assets/features/dry_png.png'
 import openImage from '../public/assets/features/open_png.png'
 import serviceImage from '../public/assets/features/service_png.png'
 import Slider from "react-slick";
+import { useRouter } from 'next/navigation';
 
 type Props = {
   handleOrderPopup: () => void;
@@ -12,15 +13,19 @@ type Props = {
 
 const Features = ({ handleOrderPopup }: Props) => {
 
+  const router = useRouter();
+
   const images = [
     {
       id: 1,
       img: curteinsImage,
+      path: 'curteins',
       title: 'מרכב וילונות',
       description: 'לכתוב פה משהו לגבי כל סוג מרכב',
     },
     {
       id: 2,
+      path: 'dry',
       img: dryImage,
       title: 'מרכב יבש',
       description: 'לכתוב פה משהו לגבי כל סוג מרכב',
@@ -28,12 +33,14 @@ const Features = ({ handleOrderPopup }: Props) => {
     {
       id: 3,
       img: openImage,
+      path: 'open',
       title: 'מרכב פתוח',
       description: 'לכתוב פה משהו לגבי כל סוג מרכב',
     },
     {
       id: 4,
       img: serviceImage,
+      path: 'service',
       title: 'מרכב  ניידת שירות',
       description: 'לכתוב פה משהו לגבי כל סוג מרכב',
     },
@@ -86,7 +93,8 @@ const Features = ({ handleOrderPopup }: Props) => {
                     {data.title}
                   </h1>
                   <div>
-                    <button className={`flexCenter rounded-full border btn_red hover:bg-transparent hover:border-black hover:!text-[#ca2828]
+                    <button onClick={() => router.push(`/gallery/${data.path}`)}
+                     className={`flexCenter rounded-full border btn_red hover:bg-transparent hover:border-black hover:!text-[#ca2828]
                 transition-all duration-300 text-lg`}>
                       עוד
                     </button>
