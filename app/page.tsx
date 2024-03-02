@@ -7,6 +7,7 @@ import Partners from "@/components/Partners";
 import Reasons from "@/components/Reasons";
 import { useEffect, useState } from "react";
 import AOS from "aos";
+import NewHero from "@/components/newHero";
 
 export default function Home() {
 
@@ -28,7 +29,8 @@ export default function Home() {
 
   return (
     <>
-      <Hero />
+      {/* <Hero /> */}
+      <NewHero />
       <Guide />
       <Features handleOrderPopup={handleOrderPopup}/>
       <Partners />

@@ -45,7 +45,7 @@ const Features = ({ handleOrderPopup }: Props) => {
     infinite: true,
     speed: 800,
     slidesToScroll: 1,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 4000,
     cssEase: "ease-in-out",
     pauseOnHover: false,
@@ -81,15 +81,16 @@ const Features = ({ handleOrderPopup }: Props) => {
                 {/* text content section */}
                 <div className="flex flex-col items-center justify-center gap-4 pt-12 sm:pt-0 text-center sm:text-left order-2 sm:order-1 relative z-10">
                   <h1
-                    className="text-5xl sm:text-6xl lg:text-7xl font-bold"
+                    className="text-5xl sm:text-6xl lg:text-7xl font-bold text-center"
                   >
                     {data.title}
                   </h1>
-                  <p
-                    className="text-sm"
-                  >
-                    {data.description}
-                  </p>
+                  <div>
+                    <button className={`flexCenter rounded-full border btn_red hover:bg-transparent hover:border-black hover:!text-[#ca2828]
+                transition-all duration-300 text-lg`}>
+                      עוד
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

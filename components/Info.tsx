@@ -36,45 +36,52 @@ const Info = ({ type }: Props) => {
         }
     }, [type])
     return (
-        <div className="container mt-10 mx-auto md:px-6">
-            <section className="mb-32 text-center">
-                <div className="flex justify-center">
-                    <div className="max-w-[700px] text-center">
-                        <h2 className="mb-20 text-center text-3xl font-bold">
-                            {title}
-                        </h2>
-                        {/* <p className="mb-16 text-neutral-500 dark:text-neutral-300">
-                           לשאול את עומרי מה לכתוב פה
-                        </p> */}
-                    </div>
+        <div className="bg-black mb-10">
+            <section id="features" className="relative block px-6 py-10 pt-2 md:pb-20 md:px-10 border-b border-neutral-900 bg-neutral-900/30">
+                <div className="relative mx-auto max-w-5xl text-center">
+                    <span className="text-gray-400 my-3 flex items-center justify-center font-medium uppercase tracking-wider">
+                        {title}
+                    </span>
+                    <h2 className="block w-full bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent text-3xl sm:text-4xl">
+                        מרכב וילונות יתן הגנה מקסימלית
+                    </h2>
+                    <p className="mx-auto my-4 w-full max-w-xl bg-transparent text-center font-medium leading-relaxed tracking-wide text-gray-400">
+                        מרכבי הוילונות שלנו בנויים בצורה הטובה ביותר בשבילכם על מנת לאפשר חוויה מקסימלית שתלווה אתכם לאורך כל הדרך
+                    </p>
                 </div>
 
-                <div className="grid gap-x-6 md:grid-cols-2 lg:grid-cols-4 lg:gap-x-12">
+                <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
                     {
                         FEATURES_DESC[idx].map(info => (
-                            <div key={info.value} className="mb-12 p-5 rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-                                <div className="-mt-12 mb-5 inline-block rounded-full bg-primary-100 p-4 text-primary shadow-md">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2"
-                                        stroke="currentColor" className="h-6 w-6">
-                                        <path strokeLinecap="round" strokeLinejoin="round"
-                                            d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                            <div key={info.value} className="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow">
+                                <div className="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border" style={{ backgroundColor: "red", borderColor: "red" }}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-tools" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="black" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                        <path d="M3 21h4l13 -13a1.5 1.5 0 0 0 -4 -4l-13 13v4"></path>
+                                        <line x1="14.5" y1="5.5" x2="18.5" y2="9.5"></line>
+                                        <polyline points="12 8 7 3 3 7 8 12"></polyline>
+                                        <line x1="7" y1="8" x2="5.5" y2="9.5"></line>
+                                        <polyline points="16 12 21 17 17 21 12 16"></polyline>
+                                        <line x1="16" y1="17" x2="14.5" y2="18.5"></line>
                                     </svg>
                                 </div>
-                                <h5 className="mb-4 text-lg font-bold dark:text-neutral-100">{info.key}</h5>
-                                <p className="text-neutral-500 dark:text-neutral-300">
-                                    {info.value.split('\n').map((line, lineIndex) => (
-                                        <React.Fragment key={lineIndex}>
-                                            {line}
-                                            <br />
-                                        </React.Fragment>
-                                    ))}
-                                </p>
+
+                                <h3 className="mt-6 text-gray-400">{info.key}</h3>
+                                <p className="my-4 mb-0 font-normal leading-relaxed tracking-wide text-gray-400">{info.value}</p>
                             </div>
                         ))
                     }
                 </div>
+
+                <div className="absolute bottom-0 left-0 z-0 h-1/3 w-full border-b"
+                    style={{ backgroundImage: "linear-gradient(to right top, rgba(79, 70, 229, 0.2) 0%, transparent 50%, transparent 100%)", borderColor: "rgba(92, 79, 240, 0.2)" }}>
+                </div>
+                <div className="absolute bottom-0 right-0 z-0 h-1/3 w-full"
+                    style={{ backgroundImage: "linear-gradient(to left top, rgba(220, 38, 38, 0.2) 0%, transparent 50%, transparent 100%)", borderColor: "rgba(92, 79, 240, 0.2)" }}>
+                </div>
             </section>
         </div>
+
     )
 }
 
