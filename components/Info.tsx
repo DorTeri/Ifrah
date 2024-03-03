@@ -53,7 +53,7 @@ const Info = ({ type }: Props) => {
                 <div className="relative mx-auto max-w-7xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
                     {
                         FEATURES_DESC[idx].map(info => (
-                            <div key={info.value} className="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow">
+                            <div key={info.value} className="rounded-md border border-neutral-800 bg-neutral-900/50 p-8 text-center shadow hover:scale-105 duration-300 hover:border-white">
                                 <div className="button-text mx-auto flex h-12 w-12 items-center justify-center rounded-md border" style={{ backgroundColor: "red", borderColor: "red" }}>
                                     <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-tools" width="24" height="24" viewBox="0 0 24 24" strokeWidth="2" stroke="black" fill="none" strokeLinecap="round" strokeLinejoin="round">
                                         <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>

@@ -54,10 +54,10 @@ const GalleryImage = ({ image }: { image: string }) => {
             ref={ref}
             animate={controls}
             initial="hidden"
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.5}}
             variants={{
-                visible: { opacity: 1, scale: 1 },
-                hidden: { opacity: 0.5, scale: 0.5 }
+                visible: { opacity: 1 },
+                hidden: { opacity: 0.5}
             }}
             className="flex w-full md:w-1/2 lg:w-1/3 flex-wrap"
         >

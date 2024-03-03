@@ -3,6 +3,7 @@ import React from 'react'
 type Props = {}
 
 const NewHero = (props: Props) => {
+    
     return (
         <section className="mb-10 -mt-10">
 
@@ -12,8 +13,8 @@ const NewHero = (props: Props) => {
                         preserveAspectRatio="none" viewBox="0 0 1920 880">
                         <g transform="translate(960,440) scale(1,1) translate(-960,-440)">
                             <linearGradient id="lg-0.047955344060927496" x1="0" x2="1" y1="0" y2="0">
-                                <stop stop-color="hsl(0, 67%, 47%)" offset="0"></stop>
-                                <stop stop-color="hsl(0, 67%, 47%)" offset="1"></stop>
+                                <stop stopColor="hsl(0, 67%, 47%)" offset="0"></stop>
+                                <stop stopColor="hsl(0, 67%, 47%)" offset="1"></stop>
                             </linearGradient>
                             <path d="" fill="url(#lg-0.047955344060927496)" opacity="0.4">
                                 <animate attributeName="d" dur="33.333333333333336s" repeatCount="indefinite" keyTimes="0;0.333;0.667;1"

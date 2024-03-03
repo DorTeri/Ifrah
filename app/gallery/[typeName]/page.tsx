@@ -15,9 +15,6 @@ const page = (props: Props) => {
   const [imageType, setImageType] = useState(typeName || 'curteins')
   const [isLoading, setIsLoading] = useState(false)
 
-  const getImagePath = (imageName: string) => {
-    return `/assets/${imageType}/${imageName}.jpg`
-  };
 
   const imageTypes = [
     {
@@ -77,7 +74,7 @@ const page = (props: Props) => {
               [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map(i => (
                 <div key={i} className='transition-opacity w-full duration-500 ease-in-out hover:opacity-75'>
                   <ImagePreview
-                    url={getImagePath(`image_${i}`)} />
+                    url={`/assets/${imageType}/image_${i}.jpg`} />
                 </div>
               ))
             }
