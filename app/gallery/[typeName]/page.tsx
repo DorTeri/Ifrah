@@ -46,13 +46,13 @@ const page = (props: Props) => {
 
   return (
     <section>
-      <div className='bg-black w-full'>
+      <div className='bg-neutral-900/30 w-full'>
         <div className='mx-auto py-10 justify-between grid grid-cols-2 gap-5 md:flex md:w-2/3 lg:w-1/2 text-center md:text-right'>
           {
             imageTypes.map(type => (
               <div key={type.value} className='relative'>
                 <p
-                  className={`inline-block bg-gradient-to-b from-white to-gray-400 bg-clip-text font-bold text-transparent cursor-pointer ${imageType === type.value ? 'border-b-2 border-red-500' : ''
+                  className={`inline-block text-black bg-clip-text font-bold cursor-pointer ${imageType === type.value ? 'border-b-2 border-red-500' : ''
                     } hover:border-b-2 hover:border-red-500`}
                   onClick={() => handleClick(type.value)}
                 >
