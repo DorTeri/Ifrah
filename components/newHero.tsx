@@ -55,7 +55,7 @@ const NewHero = (props: Props) => {
                 <div className="text-center bg-hero-img bg-cover bg-center rounded-lg">
                     <div className="relative block rounded-lg bg-[hsla(0,0%,100%,0.8)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,15%,0.8)] dark:shadow-black/20 md:py-16 md:px-12 mt-[180px]">
                         <h1 className="text-white mt-6 mb-16 text-5xl font-bold tracking-tight md:text-6xl xl:text-7xl">
-                            יפרח <br /><span className="text-[#ca2828]">המרכב שעושה את ההבדל</span>
+                             <span className="text-[#ca2828]">המרכב שעושה את ההבדל</span>
                         </h1>
                         <a className="mb-2 inline-block rounded bg-[#ca2828] px-12 pt-4 pb-3.5 text-sm font-bold uppercase leading-normal text-white hover:scale-105 shadow-[0_4px_9px_-4px_#ffffff] transition duration-150 ease-in-out mr-2 md:mr-2 md:mb-0"
                             href="/about" role="button">קצת עלינו</a>

@@ -26,7 +26,7 @@ const Features = ({ handleOrderPopup }: Props) => {
     {
       id: 2,
       path: 'dry',
-      img: dryImage,
+      img: serviceImage,
       title: 'מרכב יבש',
       description: 'לכתוב פה משהו לגבי כל סוג מרכב',
     },
@@ -39,7 +39,7 @@ const Features = ({ handleOrderPopup }: Props) => {
     },
     {
       id: 4,
-      img: serviceImage,
+      img: dryImage,
       path: 'service',
       title: 'מרכב  ניידת שירות',
       description: 'לכתוב פה משהו לגבי כל סוג מרכב',
